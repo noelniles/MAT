@@ -3,10 +3,10 @@ import pprint
 import matconf
 
 
-class UA():
+class UA:
 
     ''' dict of user agents to spoof '''
-    ua = {}
+    ua_strings = {}
 
     ''' fills the user agent dictionary '''
     def __init__(self):
@@ -19,10 +19,10 @@ class UA():
                 if (line[0] == '['):
                     ua_name = line[1:-2]
                     ua_string = next(f)
-                self.ua[ua_name] = ua_string
+                self.ua_strings[ua_name] = ua_string
         return True
 
     def list_user_agents(self):
         pp = pprint.PrettyPrinter(indent=4)
-        pp.pprint(self.ua)
+        pp.pprint(self.ua_strings)
         return True
