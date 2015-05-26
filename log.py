@@ -11,19 +11,27 @@ class Log:
 
     def __init__(self, target_name):
         self.logtime = time.strftime("%Y%m%d-%H%M%S")
-        self.target_name = target_name
-        self.target_log = os.path.join(matconf.OUTD, self.target_name)
+        self.logpath = os.path.join(matconf.OUTD, target_name)
+        self.make_sure_path_exists(self.logpath)
 
     ''' log the response '''
-    def log_response(self):
+    def log_response(self, data):
         logname = '%s_response.log' % self.logtime
-        response_log = os.path.join(self.target_log, logname)
-        self.make_sure_path_exists(response_log)
+        response_log = os.path.join(self.logpath, logname)
+
+        with open(response_log, "wt") as out_file:
+            out_file.write(data)
+            print('file written to %s' % response_log)
+
         return True
 
     ''' log the cookies '''
-    def log_cookies(self):
+    def log_cookies(self, data):
         logname = '%s_cookies.log' % self.logtime
-        cookies_log = os.path.join(self.target_log, logname)
-        self.make_sure_path_exists(cookies_log)
+        cookies_log = os.path.join(self.logpath, logname)
+
+        with open(cookies_log, "wt") as out_file:
+            out_file.write(data)
+            print('file written to %s' % cookies_log)
+
         return True

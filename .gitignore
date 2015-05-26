@@ -12,5 +12,5 @@ tests/__pycache___
 # python
 *.pyc
 
-# ignores the log directoy so it can be created
-log/
+# ignores the logs directoy so it can be created
+logs/

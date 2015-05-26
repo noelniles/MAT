@@ -2,17 +2,19 @@
 import log
 import matconf
 import ua
-'''
 from tests import log_test
+'''
 from tests import ua_test
 from tests import request_test
 
+
 def main():
 
-    ''' tests logs '''
+    ''' tests logs
     logtester = log_test.LogTest()
     logtester.test_log_response()
     logtester.test_log_cookies()
+    '''
 
     ''' tests user agents '''
     uatester = ua_test.UATest()
