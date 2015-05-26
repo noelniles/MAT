@@ -1,0 +1,16 @@
+# ignore files for MAT
+
+
+# vim-python
+.ropeproject
+__pycache__
+tests/__pycache___
+
+# vim swap
+*.swp
+
+# python
+*.pyc
+
+# ignores the log directoy so it can be created
+log/
