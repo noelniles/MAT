@@ -3,11 +3,12 @@
     The list is a dummy filled with safe URLs for use during development
 '''
 import matconf
+import pprint
 
 
 class Mal:
 
-    targets = {}
+    targets = []
 
     ''' calls parse_bad_file to set up the targets dict '''
     def __init__(self):
@@ -17,7 +18,9 @@ class Mal:
 
         with open(badfile) as f:
             for line in f:
-                if line[0] == '[':
-                    target_name = line[1:-2]
-                    target_url = next(f)
-                self.targets[target_name] = target_url
+                self.targets.append(line.rstrip())
+
+    def list_badguys(self):
+        pp = pprint.PrettyPrinter(indent=4)
+        pp.pprint(self.targets)
+        return True
