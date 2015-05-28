@@ -3,6 +3,30 @@
 Sends requests to suspected malware hosts and logs the response for further 
 analysis. 
 
+## How it Works
+
+### Targets
+**MAT** sends requests to web servers using cURL. The list of sites can be 
+found in `mat/targets/badfile.txt`. You can add any more URLs to the list; one
+URL per line. The URLs should be servers that respond to port 80, because **MAT**
+just uses HTTP right now. The idea is to find targets that respond with
+malicious code.
+
+### Requests
+**MAT** builds custom https headers and pretends to be a normal web browser.
+The default user agent is IE7 Windows XP, but it can be changed in `mat/conf/matconf.py`.
+
+### Logging
+**MAT** logs the response from the target in a file called
+`mat/logs/<target_name>/<scan_time>_response.log`. There is also a function
+to make a separate log for cookies that the targets send back, but it's not
+implemented yet.
+
+### Analysis
+**MAT** will parse through the logged responses and identify suspicious files.
+It will also follow links and try to build relationships between malicious hosts.
+*of course nothing in this section is implemented yet, but it sounds good.*
+
 ## How to Test
 
 1. Clone this repo `git clone https://github.com/shakabra/MAT.git`
