@@ -6,7 +6,7 @@ analysis.
 ## How to Test
 
 1. Clone this repo `git clone https://github.com/shakabra/MAT.git`
-2. Navigate to the `mat` directory and run `python mat.py -t all` this will:
+2. Navigate to the `mat/src` directory and run `python mat.py -t all` this will:
   - run all tests in the tests directory
   - create an example log file
 3. Running `python mat.py` with no arguments should make requests to all the
