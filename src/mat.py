@@ -1,12 +1,12 @@
 #!/usr/bin/env python
-
 import argparse
+
+from src import request
+
 from tests import log_test
 from tests import request_test
-import request
 
-
-class Mat():
+class Mat:
 
     def __init__(self):
         self.parser = argparse.ArgumentParser(

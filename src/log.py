@@ -1,8 +1,8 @@
 ''' logging class for MAT '''
-import matconf
 import os
 import time
 
+from conf import matconf
 
 class Log:
 

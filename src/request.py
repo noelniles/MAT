@@ -2,9 +2,9 @@
 import io
 import pycurl
 
-import log
-import mal
-import matconf
+from conf import matconf
+from src import log
+from src import mal
 
 
 class Request:
@@ -67,6 +67,6 @@ class Request:
 
         body = buf.getvalue()
 
-        ''' log the repsonse '''
+        ''' log the response '''
         self.log = log.Log(target_url)
         self.log.log_response(body)

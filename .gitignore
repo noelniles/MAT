@@ -1,5 +1,7 @@
 # ignore files for MAT
 
+# pycharm
+.idea
 
 # vim-python
 .ropeproject

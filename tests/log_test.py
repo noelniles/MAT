@@ -1,6 +1,5 @@
 ''' tests the log class of MAT '''
-import log
-
+from src import log
 
 class LogTest:
 

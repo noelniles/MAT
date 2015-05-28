@@ -1,8 +1,6 @@
-''' manages the list of suspected malware hosts for MAT
+''' manages the list of suspected malware hosts for MAT '''
 
-    The list is a dummy filled with safe URLs for use during development
-'''
-import matconf
+from conf import matconf
 import pprint
 
 
@@ -13,6 +11,9 @@ class Mal:
     ''' calls parse_bad_file to set up the targets dict '''
     def __init__(self):
         self.parse_badfile(matconf.BADFILE)
+
+    def update_badfile(self):
+        return True
 
     def parse_badfile(self, badfile):
 
